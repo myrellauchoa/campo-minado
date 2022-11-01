@@ -1,4 +1,4 @@
-package br.com.myrella.visao;
+package br.com.myrella.com.modelo;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -18,39 +18,62 @@ public class CampoTeste {
 	}
 	
 	@Test
-	void testeVizinhoDistanciaEsquerda() {
+	void dadoUmVizinhoAEsquerdaEntaoOVizinhoDeveraSerAdicionado() {
 		Campo vizinho = new Campo(3, 2);
 		boolean resultado = campo.adicionarVizinho(vizinho);
 		assertTrue(resultado);
 	}
 	
 	@Test
-	void testeVizinhoDistanciDireita() {
+	void dadoUmVizinhoADireitaEntaoOVizinhoDeveraSerAdicionado() {
 		Campo vizinho = new Campo(3, 4);
 		boolean resultado = campo.adicionarVizinho(vizinho);
 		assertTrue(resultado);
 	}
 	
 	@Test
-	void testeVizinhoDistanciaEmCima() {
+	void dadoUmVizinhoAcimaEntaoOVizinhoDeveraSerAdicionado() {
 		Campo vizinho = new Campo(2, 3);
 		boolean resultado = campo.adicionarVizinho(vizinho);
 		assertTrue(resultado);
 	}
 	
 	@Test
-	void testeVizinhoDistanciaEmbaixo() {
+	void dadoUmVizinhoeEmbaixoEntaoOVizinhoDeveraSerAdicionado() {
 		Campo vizinho = new Campo(4, 3);
 		boolean resultado = campo.adicionarVizinho(vizinho);
 		assertTrue(resultado);
 	}
 	
 	@Test
-	void testaNaoVizinho() {
+	void dadoOutroCampoNasMesmasCoordenadasEntaoNaoDeveraAdicionarVizinho() {
 		Campo vizinho = new Campo(1, 1);
 		boolean resultado = campo.adicionarVizinho(vizinho);
 		assertFalse(resultado);
 	}
 	
+	@Test
+	void dadoUmCampoAoExecutarAlternarMarcacaoEntaoDeveraRetornarTrue() {
+		campo.alternarMarcacao();
+		assertTrue(campo.isMarcado());
+	}
+	
+	@Test
+	void dadoUmCampoAoExecutarDuasVezesAlternarMarcacaoEntaoDeveraRetornarTrue() {
+		campo.alternarMarcacao();
+		campo.alternarMarcacao();
+		assertFalse(campo.isMarcado());
+	}
+	
+	@Test
+	void dadoUmCampoNaoMinadoENaoMarcadoAoAbrirDeveraRetornarTrue() {
+		assertTrue(campo.abrir());
+	}
+	
+	
+	@Test
+	void dadoUmCampoNaoMinadoEMarcadoAoAbrirDeveraRetornarTrue() {
+		
+	}
 	
 }

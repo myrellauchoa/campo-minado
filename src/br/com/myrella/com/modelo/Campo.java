@@ -80,4 +80,12 @@ public class Campo {
 		return marcado;
 	}
 
+	
+	public boolean isAberto() {
+		return aberto;
+	}
+	
+	public boolean isFechado() {
+		return !isAberto();
+	}
 }

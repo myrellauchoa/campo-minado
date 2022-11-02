@@ -48,7 +48,6 @@ public class Campo {
 	}
 
 	boolean abrir() {
-
 		if (!aberto && !marcado) {
 			aberto = true;
 
@@ -85,6 +84,11 @@ public class Campo {
 	}
 
 	
+
+	public void setAberto(boolean aberto) {
+		this.aberto = aberto;
+	}
+
 	public boolean isAberto() {
 		return aberto;
 	}
